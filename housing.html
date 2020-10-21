@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOUSING</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		.custom-select{
+			display: inline-block;
+			position: relative;
+			bottom: 20px;
+			left: 15px;
+		}
+		header{
+			background-color: white;
+			border-radius: 30px;
+			border: 2px solid black;
+			padding: 10px;
+			margin: 50px;
+			position: fixed;
+			top: 0;
+			width: 95%;
+		}
+		li{
+			list-style-type: none;
+		}
+		::-webkit-scrollbar {
+            width: 10px;
+        }
+		#main-menu{
+			border-radius: 30px;
+			border: 2px solid black;
+			padding: 10px;
+			margin: 50px;
+			margin-top: 0px;
+			margin-right: 80%;
+			position: fixed;
+			overflow-y: auto;
+			max-height: 670px;
+		}
+		#checkbox{
+			padding: 30px;
+		}
+		#checkbox h2{
+			padding-bottom: 10px;
+		}
+		#distance{
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 30px;
+		}
+		#price{
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 30px;
+		}
+		#bedrooms{
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 30px;
+		}
+		#bathrooms{
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 30px;
+		}
+		#foot{
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 30px;
+		}
+		.boxpadding{
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 30px;
+		}
+		#listing{
+			margin-top: 160px;
+			margin-left: 350px;
+		}
+		.houses{
+			padding: 10px;
+			float: left;
+			width: 23%;
+			margin: 50px;
+			margin-top: 0;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<a href="index.html"><img src="assets/img/logo.png" width="50px"></a>
+		<div class="custom-select" style="width:115px;">
+           <select>
+             <option value="0">New york:</option>
+             <option value="1">Albany</option>
+             <option value="2">Baltimore</option>
+             <option value="3">Cape cod</option>
+             <option value="4">Finger lakes</option>
+             <option value="5">Harrisburgs</option>
+             <option value="6">Jersey shore</option>
+             <option value="7">Long island</option>
+             <option value="8">New haven</option>
+           </select>
+        </div>
+        <div class="custom-select" style="width:115px;">
+           <select>
+             <option value="0">All new york:</option>
+             <option value="1">Bronx</option>
+             <option value="2">Brooklyn</option>
+             <option value="3">Manhattan</option>
+             <option value="4">Queens</option>
+             <option value="5">Staten island</option>
+           </select>
+        </div>
+        <div class="custom-select" style="width:115px;">
+           <select>
+             <option value="0">Housing:</option>
+             <option value="1">Gigs</option>
+             <option value="2">Services</option>
+             <option value="3">For sale</option>
+             <option value="4">Jobs</option>
+           </select>
+        </div>
+	</header>
+	<div id="main-menu">
+	   <div id="checkbox" class="boxpadding">
+	   	 <h2>Housing</h2>
+		 <ul>
+			<li>
+				<label>
+					<input type="checkbox" name="searcht">
+					search titles only
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" name="searcht">
+					has image
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" name="searcht">
+					posted today
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" name="searcht">
+					bundle duplicates
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" name="searcht">
+					include nearby areas
+				</label>
+			</li>
+		 </ul>	
+	   </div>
+	   <div id="distance" class="boxpadding">
+	   	  <span class="searchfieldlabel">miles from zip</span><br>
+	   	  <input size="5" maxlength="5" inputmode="numeric" class="flatinput searchInput search_distance" placeholder="miles" name="search_distance" value="">
+	   	  <input type="text" class="flatinput searchInput postal" placeholder="from zip" size="7" name="postal" value="">
+	   </div>
+	   <div id="price" class="boxpadding">
+          <span class="">price</span><br>
+          <input type="tel" name="min_price" class="" placeholder="min" title="whole number, no letters or symbols" value="">
+          <input type="tel" name="max_price" class="" placeholder="max" title="whole number, no letters or symbols" value="">
+       </div>
+       <div id="bedrooms" class="boxpadding">
+          <span class="">bedrooms</span><br>
+            <select name="min_bedrooms" class="">
+               <option value="">min</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+            </select>
+            <select name="max_bedrooms" class="">
+               <option value="">max</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+            </select>
+       </div>
+       <div id="bathrooms" class="boxpadding">
+          <span class="">bathrooms</span><br>
+            <select name="min_bathrooms" class="">
+               <option value="">min</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+            </select>
+            <select name="max_bathrooms" class="">
+               <option value="">max</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+            </select>
+       </div>
+       <div id="foot" class="boxpadding">
+          <span class="">ft<sup>2</sup></span><br>
+          <input type="tel" name="minSqft" class="" placeholder="min" title="whole number, no letters or symbols" value=""><br>
+          <input type="tel" name="maxSqft" class="" placeholder="max" title="whole number, no letters or symbols" value="">
+       </div>
+       <div id="availability" class="boxpadding">
+          <span class="">availability</span><br>
+          <select class="" name="availabilityMode">
+             <option value="0">all dates</option>
+             <option value="1">within 30 days</option>
+             <option value="2">beyond 30 days</option>
+          </select>
+       </div>
+       <div id="checkbox2" class="boxpadding">
+       	  <label class="pets_cat">
+             <input type="checkbox" name="pets_cat" value="1" class="">
+               cats ok
+          </label><br>
+          <label class="pets_dog">
+             <input type="checkbox" name="pets_dog" value="1" class="">
+               dogs ok
+          </label><br>
+          <label class="is_furnished">
+             <input type="checkbox" name="is_furnished" value="1" class="">
+              furnished
+          </label><br>
+          <label class="no_smoking">
+             <input type="checkbox" name="no_smoking" value="1" class="">
+              no smoking
+          </label><br>
+          <label class="wheelchaccess">
+             <input type="checkbox" name="wheelchaccess" value="1" class="">
+              wheelchair access
+          </label><br>
+          <label class="ev_charging">
+             <input type="checkbox" name="ev_charging" value="1" class="">
+              EV charging
+          </label><br>
+          <label class="application_fee">
+             <input type="checkbox" name="application_fee" value="1" class="">
+              no application fee
+          </label><br>
+          <label class="broker_fee">
+             <input type="checkbox" name="broker_fee" value="1" class="">
+              no broker fee
+          </label><br>
+       </div>
+       <div id="opendate" class="boxpadding">
+           <div class="searchfieldlabel">open house date</div>
+           <select class="autosubmit" id="sale_date" name="sale_date">
+              <option>all dates</option>
+              <option value="2020-10-20">oct 20 - today</option>
+              <option value="2020-10-21">oct 21 - tomorrow</option>
+              <option value="2020-10-22">oct 22 - thursday</option>
+              <option value="2020-10-23">oct 23 - friday</option>
+              <option value="2020-10-24">oct 24 - saturday</option>
+              <option value="2020-10-25">oct 25 - sunday</option>
+              <option value="2020-10-26">oct 26 - monday</option>
+              <option value="2020-10-27">oct 27 - tuesday</option>
+              <option value="2020-10-28">oct 28 - wednesday</option>
+              <option value="2020-10-29">oct 29 - thursday</option>
+              <option value="2020-10-30">oct 30 - friday</option>
+              <option value="2020-10-31">oct 31 - saturday</option>
+              <option value="2020-11-01">nov 1 - sunday</option>
+              <option value="2020-11-02">nov 2 - monday</option>
+              <option value="2020-11-03">nov 3 - tuesday</option>
+              <option value="2020-11-04">nov 4 - wednesday</option>
+              <option value="2020-11-05">nov 5 - thursday</option>
+              <option value="2020-11-06">nov 6 - friday</option>
+              <option value="2020-11-07">nov 7 - saturday</option>
+              <option value="2020-11-08">nov 8 - sunday</option>
+              <option value="2020-11-09">nov 9 - monday</option>
+              <option value="2020-11-10">nov 10 - tuesday</option>
+              <option value="2020-11-11">nov 11 - wednesday</option>
+              <option value="2020-11-12">nov 12 - thursday</option>
+              <option value="2020-11-13">nov 13 - friday</option>
+              <option value="2020-11-14">nov 14 - saturday</option>
+              <option value="2020-11-15">nov 15 - sunday</option>
+              <option value="2020-11-16">nov 16 - monday</option>
+           </select>
+       </div>
+       <div id="reset" class="boxpadding">
+            <button type="submit"><a href="housing.html" title="clear all search parameters" class="reset linklike">reset</a>
+            </button>
+            <button type="submit" class="searchlink linklike">update search</button>
+       </div>
+    </div>
+    <div id="listing">
+    	<a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+        <a href="details.html">
+    		<div class="houses">
+    		   <img src="assets/img/house1.jpg" width="350px">
+    		   <p> ONE BEDROOM APT</p>
+    	    </div>
+        </a>
+    	
+    	
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

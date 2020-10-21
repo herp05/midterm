@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DETAILS</title>
+	<style type="text/css">
+
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		.custom-select{
+			display: inline-block;
+			position: relative;
+			bottom: 20px;
+			left: 15px;
+		} 
+
+		header{
+			background-color: white;
+			border-radius: 30px;
+			border: 2px solid black;
+			padding: 10px;
+			margin: 50px;
+			position: fixed;
+			top: 0;
+			width: 95%;
+		}
+
+		#img{
+			margin-top: 160px;
+			margin-left: 100px;
+			padding-right: 0px;
+			margin-right: 850px;
+		}
+
+       .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+        }
+
+       .column img {
+           opacity: 1; 
+           cursor: pointer; 
+        }
+
+        .column img:hover {
+           opacity: ;
+        }
+
+
+       .row:after {
+           content: "";
+           display: table;
+           clear: both;
+        }
+
+        .container {
+           display: none;
+        }
+
+        #imgtext {
+           bottom: 15px;
+           left: 15px;
+           color: white;
+          font-size: 20px;
+        }
+
+        .closebtn {
+           top: 10px;
+           right: 15px;
+           color: white;
+           font-size: 35px;
+           cursor: pointer;
+        }
+        #des{
+        	padding: 100px;
+        	padding-top: 50px;
+        	padding-bottom: 0;
+        }
+        #contact{
+        	padding: 100px;
+        	padding-top: 50px;
+        }
+        .textbox{
+        	width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+        }
+        .comments{
+        	width: 30%;
+        	padding: 35px 20px;
+        	margin: 8px 0;
+        }
+        .button{
+        	background-color: grey;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+	<header>
+		<a href="index.html"><img src="assets/img/logo.png" width="50px"></a>
+		<div class="custom-select" style="width:115px;">
+           <select>
+             <option value="0">New york:</option>
+             <option value="1">Albany</option>
+             <option value="2">Baltimore</option>
+             <option value="3">Cape cod</option>
+             <option value="4">Finger lakes</option>
+             <option value="5">Harrisburgs</option>
+             <option value="6">Jersey shore</option>
+             <option value="7">Long island</option>
+             <option value="8">New haven</option>
+           </select>
+        </div>
+        <div class="custom-select" style="width:115px;">
+           <select>
+             <option value="0">All new york:</option>
+             <option value="1">Bronx</option>
+             <option value="2">Brooklyn</option>
+             <option value="3">Manhattan</option>
+             <option value="4">Queens</option>
+             <option value="5">Staten island</option>
+           </select>
+        </div>
+        <div class="custom-select" style="width:115px;">
+           <select>
+             <option value="0">Housing:</option>
+             <option value="1">Gigs</option>
+             <option value="2">Services</option>
+             <option value="3">For sale</option>
+             <option value="4">Jobs</option>
+           </select>
+        </div>
+	</header>
+    <div id="img">
+  <div class="row">
+  <div class="column">
+    <img src="assets/img/house1.jpg" width="300px" alt="" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="assets/img/house2.jpg" width="300px" alt="" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="assets/img/house3.jpg" width="300px" alt="" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="assets/img/house4.jpg" width="300px" alt="" style="width:100%" onclick="myFunction(this);">
+  </div>
+  </div>
+  <div class="container">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+      <img id="expandedImg" style="width:100%">
+      <div id="imgtext"></div>
+  </div>
+  <script>
+  function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+  }
+  </script>
+    </div>
+    <div id="des">
+    	<h2>ONE BEDROOM APT</h2><br>
+    	<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="contact">
+    	<span class=""><h2>CONTACT</h2></span><br>
+    	  <h3>Name</h3>
+          <input type="text" name="Name" class="textbox"><br>
+          <h3>Email</h3>
+          <input type="text" name="Email" class="textbox">
+          <h3>Comments</h3>
+          <input type="textbox" name="Comments" class="comments"><br>
+          <input type="submit" value="submit" name="" class="button">
+    </div>
+
+</body>
+</html>
